@@ -6,6 +6,7 @@ public class Ejer07 {
 
         System.out.println("hola mundo");
         System.out.println("hola git");
+        System.out.println("hola hola");
 
     }
 
