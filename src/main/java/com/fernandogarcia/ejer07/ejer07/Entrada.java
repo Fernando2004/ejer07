@@ -2,7 +2,7 @@ package com.fernandogarcia.ejer07.ejer07;
 
 public abstract class Entrada {
 
-    
+
     public static int auto=0;
 
     protected int id;
