@@ -2,6 +2,12 @@ package com.fernandogarcia.ejer07.ejer07;
 
 public class EntradaVip extends Entrada{
 
+    public int autonum=0;
+
+    protected int nAsiento=++autonum;
+
+
+
     public EntradaVip() {
         super();
     }

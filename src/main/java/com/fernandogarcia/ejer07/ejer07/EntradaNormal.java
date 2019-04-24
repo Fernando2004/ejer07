@@ -4,7 +4,7 @@ public class EntradaNormal extends Entrada{
 
 
 
-    
+
     public EntradaNormal() {
         super();
     }
