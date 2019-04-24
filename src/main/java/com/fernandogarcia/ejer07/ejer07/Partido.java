@@ -9,9 +9,8 @@ public class Partido {
     public static final int NUM_ZONAS_VIP = 4;
     public static final int NUM_ZONAS_NORMAL = 20;
 
-    public static Zona[] arrayZonasVip = new Zona[NUM_ZONAS_VIP];
-    public static Zona[] arrayZonasNormal = new Zona[NUM_ZONAS_NORMAL];
-
+    private Zona[] arrayZonasVip = new Zona[NUM_ZONAS_VIP];
+    private Zona[] arrayZonasNormal = new Zona[NUM_ZONAS_NORMAL];
     private String fecha;
     private Afluencia afluencia;
     private String nombreEquipoLocal;
@@ -19,6 +18,7 @@ public class Partido {
 
 
     public Partido(String fecha, Afluencia afluencia, String nombreEquipoLocal, String nombreEquipoVisitante) {
+        anyadirZonasArray();
         this.fecha = fecha;
         this.afluencia = afluencia;
         this.nombreEquipoLocal = nombreEquipoLocal;
@@ -73,19 +73,19 @@ public class Partido {
         this.nombreEquipoVisitante = lector.nextLine();
     }
 
-    public static Zona[] getArrayZonasVip() {
+    public Zona[] getArrayZonasVip() {
         return arrayZonasVip;
     }
 
-    public static void setArrayZonasVip(Zona[] arrayZonasVip) {
+    public void setArrayZonasVip(Zona[] arrayZonasVip) {
         arrayZonasVip = arrayZonasVip;
     }
 
-    public static Zona[] getArrayZonasNormal() {
+    public Zona[] getArrayZonasNormal() {
         return arrayZonasNormal;
     }
 
-    public static void setArrayZonasNormal(Zona[] arrayZonasNormal) {
+    public  void setArrayZonasNormal(Zona[] arrayZonasNormal) {
         arrayZonasNormal = arrayZonasNormal;
     }
 
@@ -124,21 +124,22 @@ public class Partido {
     @Override
     public String toString() {
         return "\n----Partido por disputar----" +
-                "\nfecha= " + fecha +
-                "\nafluencia= " + afluencia +
-                "\nnombreEquipoLocal= " + nombreEquipoLocal +
-                "\nnombreEquipoVisitante= " + nombreEquipoVisitante;
+                "\nFecha= " + fecha +
+                "\nAfluencia= " + afluencia +
+                "\nEquipo Local= " + nombreEquipoLocal +
+                "\nEquipo Visitante= " + nombreEquipoVisitante;
 
     }
     /**Muestro la entrada que se llevara el cliente*/
     public String toStringEntrada() {
         return
-                "\nfecha= " + fecha +
-                "\nnombreEquipoLocal= " + nombreEquipoLocal +
-                "\nnombreEquipoVisitante= " + nombreEquipoVisitante;
+                "\nFecha= " + fecha +
+                "\nEquipo Local= " + nombreEquipoLocal +
+                "\nEquipo Visitante= " + nombreEquipoVisitante;
     }
-    /**añadimos una zona a las entradas vip y normal*/
-    public static void anyadirZonasArray() {
+    /**añadimos  zona a las entradas vip y normal*/
+    public void anyadirZonasArray() {
+        Zona.auto=0;
         for (int i = 0; i < arrayZonasVip.length; i++) {
             arrayZonasVip[i] = new Zona(Zona.PRECIO_VIP);
         }

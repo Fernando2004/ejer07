@@ -2,7 +2,6 @@ package com.fernandogarcia.ejer07.ejer07;
 
 import com.fernandogarcia.ejer07.utils.Lib;
 import com.fernandogarcia.ejer07.utils.Log;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import static com.fernandogarcia.ejer07.utils.Lib.lector;
@@ -15,8 +14,7 @@ public class Ejer07 {
 
         //Estos los gernero para verlos para tener algunos datos
         GestionPartidos.generarListaPartidos();
-        //Este lo genero para que funcione bien y solo una vez
-        Partido.anyadirZonasArray();
+        //vemos los creados
         GestionPartidos.listarPartidos();
 
         //Rellenamos los arrays zonas
@@ -47,13 +45,19 @@ public class Ejer07 {
                                 Lib.pausa();
                                 break;
                             case 3:
+                                GestionPartidos.listarPartidos();
+                                System.out.println("Indica la fecha del partido a ver sus asientos ");
+                                String fechaPartidoOcupados= lector.nextLine();
 
-                                Log.i("Las localidades ocupadas del partido son: "+GestionEntradas.asientosOcupados());
+                                Log.i("Las localidades ocupadas del partido son: "+GestionEntradas.asientosOcupados(fechaPartidoOcupados));
                                 Lib.pausa();
                                 break;
                             case 4:
 
-                                Log.d("Las localidades libres del partido son: "+GestionEntradas.asientosLibres());
+                                GestionPartidos.listarPartidos();
+                                System.out.println("Indica la fecha del partido a ver sus asientos ");
+                                String fechaPartidoLibres= lector.nextLine();
+                                Log.d("Las localidades libres del partido son: "+GestionEntradas.asientosLibres(fechaPartidoLibres));
                                 Lib.pausa();
                                 break;
                             case 5:

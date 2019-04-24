@@ -30,8 +30,10 @@ public class GestionEntradas {
         if (opc==1||opc==2) {
 
             boolean fechaCorrecta = false;
+            //Listo las zonas
+
             //Listo los partidos
-            GestionPartidos.listarPartidos();
+            //GestionPartidos.listarPartidos();
             //Selecciono partido indicando la fecha que juega
             String fecha;
             do {
@@ -56,17 +58,17 @@ public class GestionEntradas {
 
                     //---------------------------------------------
                     //Bamos a zonas
-                    Lib.listarArray(Partido.arrayZonasVip);
+                    Lib.listarArray(partido.getArrayZonasVip());
                     System.out.println("Indica la zona del estadio");
                     int idZona = Lib.lector.nextInt();
 
                     //Buscamos la idZona y la controlamos en cada array
-                    int posZona = GestionPartidos.buscarPartidoZona(idZona,Partido.arrayZonasVip);
+                    int posZona = GestionPartidos.buscarPartidoZona(idZona,partido.getArrayZonasVip());
                     if (posZona == -1) {
                         System.out.println("No tememos zonas con ese numero");
                     } else {
                         //Guardo la posicion donde esta la zona seleccionado
-                        Zona zona = Partido.arrayZonasVip[posZona];
+                        Zona zona = partido.getArrayZonasVip()[posZona];
                         if (zona.getLibres() == 0) {
                             System.out.println("Elija otra zona esta completa");
                         } else {
@@ -82,17 +84,17 @@ public class GestionEntradas {
                 } else {//entradaNormal
                     //---------------------------------------------
                     //Bamos a zonas
-                    Lib.listarArray(Partido.arrayZonasNormal);
+                    Lib.listarArray(partido.getArrayZonasNormal());
                     System.out.println("Indica la zona del estadio");
                     int idZona = Lib.lector.nextInt();
 
                     //Buscamos la idZona y la controlamos
-                    int posZona = GestionPartidos.buscarPartidoZona(idZona,Partido.arrayZonasNormal);
+                    int posZona = GestionPartidos.buscarPartidoZona(idZona,partido.getArrayZonasNormal());
                     if (posZona == -1) {
                         System.out.println("No tememos zonas con ese numero");
                     } else {
                         //Guardo la posicion donde esta la zona seleccionado
-                        Zona zona = Partido.arrayZonasNormal[posZona];
+                        Zona zona = partido.getArrayZonasNormal()[posZona];
                         if (zona.getLibres() == 0) {
                             System.out.println("Elija otra zona esta completa");
                         } else {
@@ -155,14 +157,20 @@ public class GestionEntradas {
         return pos;
     }
     /**Muestra los asientos ocupados de cada partido*/
-    public static int asientosOcupados() {
+    public static int asientosOcupados(String fecha) {
+        int cont=0;
 
-        return listaEntradasVendidas.size();
+        for (Entrada e:listaEntradasVendidas) {
+            if (e.getPartido().getFecha().equals(fecha)){
+                cont++;
+            }
+        }
+        return cont;
     }
     /**Muestra los asientos libres de cada partido*/
-    public static int asientosLibres() {
+    public static int asientosLibres(String fecha) {
 
-        return AFORO_TOTAL-listaEntradasVendidas.size();
+        return AFORO_TOTAL-asientosOcupados(fecha);
     }
 
     /**Muestra la recaudacion de cada partido*/

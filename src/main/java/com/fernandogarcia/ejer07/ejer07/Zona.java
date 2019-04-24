@@ -58,7 +58,10 @@ public  class Zona {
             while (j<arrayAsientos[0].length && arrayAsientos[i][j]!=null){
                 j++;
             }
-            i++;
+            //Cambia de fila si la ultimo esta llena sino no
+            if (arrayAsientos[i][j]!=null) {
+                i++;
+            }
         }
         asiento[0] = i;
         asiento[1] = j;
