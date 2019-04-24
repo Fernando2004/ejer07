@@ -20,17 +20,17 @@ public class Ejer07 {
             opcion = menuPrincipal();
             switch (opcion) {
                 case 1:
-                    System.out.println("--------20---------");
-                    //nuevoPaciente();
+                    System.out.println("-----------------");
+
                     break;
                 case 2:
-                    //atenderPaciente();
+
                     break;
                 case 3:
-                    //consultas();
+
                     break;
                 case 4:
-                    //altaMedica();
+
                     break;
                 case 0:
                     System.out.println("Hasta pronto");
