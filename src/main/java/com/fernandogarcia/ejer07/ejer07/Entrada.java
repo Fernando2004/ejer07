@@ -2,78 +2,72 @@ package com.fernandogarcia.ejer07.ejer07;
 
 public abstract class Entrada {
 
+    
+    public static int auto=0;
 
-
-    public int autonum=0;
-
-    protected int id=++autonum;
-    protected String nombrePartido;
-    protected String zonaEstadio;
-    protected int filaZona;
-    protected int numeroAsiento;
+    protected int id;
+    protected Partido partido;
+    protected Zona zona;
+    protected int nFila;
+    protected int nAsiento;
 
     //constructores
-
 
     public Entrada() {
     }
 
-    public Entrada(int id, String nombrePartido, String zonaEstadio, int filaZona, int numeroAsiento) {
-        this.id = id;
-        this.nombrePartido = nombrePartido;
-        this.zonaEstadio = zonaEstadio;
-        this.filaZona = filaZona;
-        this.numeroAsiento = numeroAsiento;
+    public Entrada(Partido partido, Zona zona, int nFila, int nAsiento) {
+        this.partido = partido;
+        this.zona = zona;
+        this.nFila = nFila;
+        this.nAsiento = nAsiento;
+
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Partido getPartido() {
+        return partido;
     }
 
-    public String getNombrePartido() {
-        return nombrePartido;
+    public void setPartido(Partido partido) {
+        this.partido = partido;
     }
 
-    public void setNombrePartido(String nombrePartido) {
-        this.nombrePartido = nombrePartido;
+    public Zona getZona() {
+        return zona;
     }
 
-    public String getZonaEstadio() {
-        return zonaEstadio;
+    public void setZona(Zona zona) {
+        this.zona = zona;
     }
 
-    public void setZonaEstadio(String zonaEstadio) {
-        this.zonaEstadio = zonaEstadio;
+    public int getnFila() {
+        return nFila;
     }
 
-    public int getFilaZona() {
-        return filaZona;
+    public void setnFila(int nFila) {
+        this.nFila = nFila;
     }
 
-    public void setFilaZona(int filaZona) {
-        this.filaZona = filaZona;
+    public int getnAsiento() {
+        return nAsiento;
     }
 
-    public int getNumeroAsiento() {
-        return numeroAsiento;
-    }
-
-    public void setNumeroAsiento(int numeroAsiento) {
-        this.numeroAsiento = numeroAsiento;
+    public void setnAsiento(int nAsiento) {
+        this.nAsiento = nAsiento;
     }
 
     @Override
     public String toString() {
         return "Entrada{" +
                 "id=" + id +
-                ", nombrePartido='" + nombrePartido + '\'' +
-                ", zonaEstadio='" + zonaEstadio + '\'' +
-                ", filaZona=" + filaZona +
-                ", numeroAsiento=" + numeroAsiento +
+                ", partido=" + partido +
+                ", zona=" + zona +
+                ", nFila=" + nFila +
+                ", nAsiento=" + nAsiento +
                 '}';
     }
 }
