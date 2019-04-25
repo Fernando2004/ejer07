@@ -21,10 +21,13 @@ public class Ejer07 {
             switch (opcion) {
                 case 1:
 
-                    //GentionPartidos.generarListaPartidos();
-                    //GentionPartidos.listaPartidos();
+
                     System.out.println("--------------------------------------");
                     GentionPartidos.altaPartido();
+                    GentionPartidos.generarListaPartidos();
+                    GentionPartidos.listaPartidos();
+                    //GentionPartidos.generarListaPartidos();
+                    //GentionPartidos.listaPartidos();
                     Lib.pausa();
                     break;
                 case 2:

@@ -197,5 +197,28 @@ public class Lib {
         }
         mostrarMatriz(array);
     }
+    //-------------------------Comprobar Fechas en Lib.--------------------------
+    /**Comprobamos la fecha */
+    public static boolean isFechaCorrecta(String fechaNacimiento){
+        boolean correcta=true;
+        String[] fechaTruncada=fechaNacimiento.split("/");
+
+        if(fechaTruncada.length!=3){
+            correcta=false;
+        }else{
+            int dia=Integer.parseInt(fechaTruncada[0]);
+            int mes=Integer.parseInt(fechaTruncada[1])-1;
+            int anyo=Integer.parseInt(fechaTruncada[2]);
+
+            if(dia<1||dia>31){
+                correcta=false;
+            }else if(mes<1||mes>12){
+                correcta=false;}
+            else if(anyo<1900){
+                correcta=false;
+            }
+        }
+        return correcta;
+    }
 
 }

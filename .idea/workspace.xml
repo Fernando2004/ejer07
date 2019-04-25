@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a138c23-e19a-430c-904f-9ff569c1228a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GentionPartidos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/fernandogarcia/ejer07/ejer07/GestionEntradas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/fernandogarcia/ejer07/ejer07/GestionEntradas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/fernandogarcia/ejer07/ejer07/Ejer07.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/fernandogarcia/ejer07/ejer07/Ejer07.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/fernandogarcia/ejer07/ejer07/Zona.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/fernandogarcia/ejer07/ejer07/Zona.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Ejer07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Ejer07.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GestionEntradas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GestionEntradas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Partido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/utils/Lib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/utils/Lib.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Ejer07.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+            <state relative-caret-position="525">
+              <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,24 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Partido.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+            <state relative-caret-position="-1040">
+              <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
               <folding>
-                <element signature="e#1826#1827#0" expanded="true" />
-                <element signature="e#1854#1855#0" expanded="true" />
-                <element signature="e#1896#1897#0" expanded="true" />
-                <element signature="e#1930#1931#0" expanded="true" />
-                <element signature="e#1969#1970#0" expanded="true" />
-                <element signature="e#2001#2002#0" expanded="true" />
-                <element signature="e#2054#2055#0" expanded="true" />
-                <element signature="e#2096#2097#0" expanded="true" />
-                <element signature="e#2140#2141#0" expanded="true" />
-                <element signature="e#2180#2181#0" expanded="true" />
-                <element signature="e#2246#2247#0" expanded="true" />
-                <element signature="e#2304#2305#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2564#2565#0" expanded="true" />
+                <element signature="e#2640#2641#0" expanded="true" />
+                <element signature="e#2711#2712#0" expanded="true" />
+                <element signature="e#2806#2807#0" expanded="true" />
+                <element signature="e#2890#2891#0" expanded="true" />
+                <element signature="e#3014#3015#0" expanded="true" />
+                <element signature="e#3106#3107#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GentionPartidos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+            <state relative-caret-position="63">
+              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/utils/Lib.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+            <state>
+              <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Entrada.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="89">
               <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
               <folding>
                 <element signature="e#1206#1207#0" expanded="true" />
@@ -127,7 +123,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/EntradaVip.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="89">
               <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding>
                 <element signature="e#184#185#0" expanded="true" />
@@ -142,7 +138,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/EntradaNormal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="115">
               <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding>
                 <element signature="e#142#143#0" expanded="true" />
@@ -181,15 +177,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/EntradaNormal.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/EntradaVip.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/ZonaNormal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/utils/Lib.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/ZonaVip.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/IZona.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Entrada.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Zona.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GestionEntradas.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Ejer07.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GentionPartidos.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/utils/Lib.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Partido.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Ejer07.java" />
       </list>
     </option>
   </component>
@@ -205,8 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,10 +260,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556226351373" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556230218394" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -377,14 +373,21 @@
       <option name="project" value="LOCAL" />
       <updated>1556197918050</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Tengo la estructura empiezo">
+      <created>1556226420236</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1556226420236</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1704698" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17449665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -462,7 +465,8 @@
     <MESSAGE value="tercer 2commit" />
     <MESSAGE value="CREAMOS LOS ARRAYS DE ZONA" />
     <MESSAGE value="Tengo la estructura creada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tengo la estructura creada" />
+    <MESSAGE value="Tengo la estructura empiezo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tengo la estructura empiezo" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build.gradle">
@@ -528,9 +532,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Entrada.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GestionEntradas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Entrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
             <element signature="e#1206#1207#0" expanded="true" />
@@ -541,22 +552,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/EntradaVip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/EntradaNormal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="115">
           <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding>
             <element signature="e#142#143#0" expanded="true" />
@@ -567,10 +565,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/EntradaVip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/utils/Lib.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        <state>
+          <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -584,17 +595,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GestionEntradas.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Partido.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="-1040">
+          <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2564#2565#0" expanded="true" />
+            <element signature="e#2640#2641#0" expanded="true" />
+            <element signature="e#2711#2712#0" expanded="true" />
+            <element signature="e#2806#2807#0" expanded="true" />
+            <element signature="e#2890#2891#0" expanded="true" />
+            <element signature="e#3014#3015#0" expanded="true" />
+            <element signature="e#3106#3107#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/GentionPartidos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        <state relative-caret-position="63">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -603,31 +624,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Ejer07.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        <state relative-caret-position="525">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fernandogarcia/ejer07/ejer07/Partido.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding>
-            <element signature="e#1826#1827#0" expanded="true" />
-            <element signature="e#1854#1855#0" expanded="true" />
-            <element signature="e#1896#1897#0" expanded="true" />
-            <element signature="e#1930#1931#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
-            <element signature="e#2001#2002#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2096#2097#0" expanded="true" />
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2180#2181#0" expanded="true" />
-            <element signature="e#2246#2247#0" expanded="true" />
-            <element signature="e#2304#2305#0" expanded="true" />
           </folding>
         </state>
       </provider>

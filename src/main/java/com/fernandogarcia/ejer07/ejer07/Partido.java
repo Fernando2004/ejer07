@@ -1,6 +1,9 @@
 package com.fernandogarcia.ejer07.ejer07;
 
 
+import com.fernandogarcia.ejer07.misexception.FechaIncorrectaException;
+import com.fernandogarcia.ejer07.utils.Lib;
+
 import static com.fernandogarcia.ejer07.utils.Lib.lector;
 
 public class Partido {
@@ -20,11 +23,25 @@ public class Partido {
     }
 
     public Partido() {
+        boolean fechaCorrecta=false;
         System.out.println("----------PARTIDO DEL DIA---------------");
-        System.out.println("Introduce la fecha del partido");
-        this.fecha = lector.nextLine();
+        do {
+            System.out.println("Introduce la fecha del partido");
+            this.fecha = lector.nextLine();
+            this.fecha = lector.nextLine();
+            try {
+                if (!Lib.isFechaCorrecta(fecha)) {
+                    throw new FechaIncorrectaException("La fecha es incorrecta recuerde (dd/MM/yyyy)");
+                }
+                else {
+                    fechaCorrecta=true;
+                }
+            } catch (FechaIncorrectaException e) {
+                System.out.println(e.getMessage());
+            }
+        }while (!fechaCorrecta);
+        //this.fecha = lector.nextLine();
         //Meter el swhit con el enum
-        System.out.println();
         System.out.println("Indica la afluencia del partido");
         System.out.println("1. ALTA AFLUENCIA");
         System.out.println("2. MEDIA AFLUENCIA");
@@ -46,9 +63,9 @@ public class Partido {
         } while (afluencia == null);
         lector.nextLine();
         System.out.println("Indica el nombre del equipo local");
-        nombreEquipoLocal = lector.nextLine();
+        this.nombreEquipoLocal = lector.nextLine();
         System.out.println("Indica el nombre del equipo visitante");
-        nombreEquipoVisitante = lector.nextLine();
+        this.nombreEquipoVisitante = lector.nextLine();
     }
 
     public String getFecha() {
@@ -91,6 +108,8 @@ public class Partido {
                 "\nnombreEquipoLocal= " + nombreEquipoLocal +
                 "\nnombreEquipoVisitante= " + nombreEquipoVisitante;
     }
+
+
 
 
 }
