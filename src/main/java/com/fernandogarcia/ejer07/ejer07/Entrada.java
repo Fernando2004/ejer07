@@ -62,12 +62,11 @@ public abstract class Entrada {
 
     @Override
     public String toString() {
-        return "Entrada{" +
-                "id=" + id +
-                ", partido=" + partido +
-                ", zona=" + zona +
-                ", nFila=" + nFila +
-                ", nAsiento=" + nAsiento +
-                '}';
+        return "Entrada\n" +
+                "\nid= " + id +
+                "\npartido= " + partido +
+                "\nzona= " + zona +
+                "\nFila= " + nFila +
+                "\nAsiento= " + nAsiento;
     }
 }

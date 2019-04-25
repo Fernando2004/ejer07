@@ -6,9 +6,11 @@ import static com.fernandogarcia.ejer07.utils.Lib.lector;
 
 public class Ejer07 {
 
-    public static final int NUM_ZONAS = 24;
+    public static final int NUM_ZONAS_VIP = 4;
+    public static final int NUM_ZONAS_NORMAL = 20;
 
-    public static Zona[] arrayZonas = new Zona[NUM_ZONAS];
+    public static Zona[] arrayZonasVip = new Zona[NUM_ZONAS_VIP];
+    public static Zona[] arrayZonasNormal = new Zona[NUM_ZONAS_NORMAL];
 
     public static int[][] arraySillas =new int[3][100];
 
@@ -21,16 +23,14 @@ public class Ejer07 {
             opcion = menuPrincipal();
             switch (opcion) {
                 case 1:
-                    System.out.println("-----------------");
-                    System.out.println(Lib.crearClave());
-                    System.out.println(Lib.cambiaPrecio(75));
-                    System.out.println(Lib.cambiaPrecio(130));
+                    //Seleccionamos el partido
+
                     Lib.pausa();
                     break;
                 case 2:
-                    Lib.rellenaArrayNum(arraySillas);
-                    //Lib.mostrarArray(arraySillas);
-                    //System.out.println(Lib.arrayMax(arraySillas));
+                    //Lib.rellenaArrayDobleConClaveTaquilla(arraySillas);
+
+                    //Lib.rellenaArrayNumSilla(arraySillas);
 
                     //Cuando selecciono el partido salta el menu de ventas
 
