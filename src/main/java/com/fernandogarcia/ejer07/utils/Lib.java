@@ -184,5 +184,18 @@ public class Lib {
             System.out.println("Entrada no encontrada ");
     }
 
+    /**
+     * Rellenamos el array doble con numeros del 0 al
+     */
+    public  void numeraSilla(int[][] array) {
+
+        int num = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                array[i][j] = num++;
+            }
+        }
+        mostrarMatriz(array);
+    }
 
 }

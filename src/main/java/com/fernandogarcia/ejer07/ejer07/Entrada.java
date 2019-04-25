@@ -10,6 +10,7 @@ public abstract class Entrada {
     protected Zona zona;
     protected int nFila;
     protected int nAsiento;
+    protected double precioEntrada;
 
     //constructores
 
@@ -21,7 +22,7 @@ public abstract class Entrada {
         this.zona = zona;
         this.nFila = nFila;
         this.nAsiento = nAsiento;
-
+        //Asignar predio de entrada
     }
 
     public int getId() {
@@ -60,6 +61,14 @@ public abstract class Entrada {
         this.nAsiento = nAsiento;
     }
 
+    public double getPrecioEntrada() {
+        return precioEntrada;
+    }
+
+    public void setPrecioEntrada(double precioEntrada) {
+        this.precioEntrada = precioEntrada;
+    }
+
     @Override
     public String toString() {
         return "Entrada\n" +
@@ -67,6 +76,7 @@ public abstract class Entrada {
                 "\npartido= " + partido +
                 "\nzona= " + zona +
                 "\nFila= " + nFila +
-                "\nAsiento= " + nAsiento;
+                "\nAsiento= " + nAsiento+
+                "\nPrecio entrada= " + precioEntrada;
     }
 }

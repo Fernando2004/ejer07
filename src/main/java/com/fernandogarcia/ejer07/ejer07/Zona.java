@@ -14,34 +14,34 @@ public  class Zona {
     public static final double PRECIO_NORMAL=40;
 
     protected int nZona;
-    protected int[][] arrayAsientos;
-    protected double precio;
+    protected Entrada[][] arrayAsientos;
+    protected double precioBase;
 
 
-    public Zona() {
+    public Zona(double precio) {
         this.nZona=++auto;
-        this.arrayAsientos =new int[NUM_FILAS][NUM_ASIENTOS];
-        this.precio=precio;
+        this.arrayAsientos =new Entrada[NUM_FILAS][NUM_ASIENTOS];
+        this.precioBase=precio;
     }
 
     public int getnZona() {
         return nZona;
     }
 
-    public int[][] getArrayAsientos() {
+    public Entrada[][] getArrayAsientos() {
         return arrayAsientos;
     }
 
-    public void setArrayAsientos(int[][] arrayAsientos) {
+    public void setArrayAsientos(Entrada[][] arrayAsientos) {
         this.arrayAsientos = arrayAsientos;
     }
 
     public double getPrecio() {
-        return precio;
+        return precioBase;
     }
 
     public void setPrecio(double precio) {
-        this.precio = precio;
+        this.precioBase = precio;
     }
 
     @Override
@@ -54,7 +54,7 @@ public  class Zona {
                         cadena=cadena+"\nAsiento no disponible ";
                     }
                     return cadena+
-                    "\nprecio= " +precio;
+                    "\nprecio= " +precioBase;
     }
 
     /**
