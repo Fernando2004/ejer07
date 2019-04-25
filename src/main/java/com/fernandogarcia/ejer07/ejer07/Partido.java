@@ -19,11 +19,12 @@ public class Partido {
         this.nombreEquipoVisitante = nombreEquipoVisitante;
     }
 
-    public Partido(){
+    public Partido() {
         System.out.println("----------PARTIDO DEL DIA---------------");
         System.out.println("Introduce la fecha del partido");
-        fecha=lector.nextLine();
+        this.fecha = lector.nextLine();
         //Meter el swhit con el enum
+        System.out.println();
         System.out.println("Indica la afluencia del partido");
         System.out.println("1. ALTA AFLUENCIA");
         System.out.println("2. MEDIA AFLUENCIA");
@@ -32,12 +33,12 @@ public class Partido {
         do {
             switch (opc) {
                 case 1:
-                    this.afluencia =Afluencia.ALTA_AFLUENCIA;
+                    this.afluencia = Afluencia.ALTA_AFLUENCIA;
                     break;
                 case 2:
-                    this.afluencia=Afluencia.MEDIA_AFLUENCIA;
+                    this.afluencia = Afluencia.MEDIA_AFLUENCIA;
                 case 3:
-                    this.afluencia=Afluencia.BAJA_AFLUENCIA;
+                    this.afluencia = Afluencia.BAJA_AFLUENCIA;
                     break;
                 default:
                     System.out.println("Introduce una opcion valida");
@@ -45,9 +46,9 @@ public class Partido {
         } while (afluencia == null);
         lector.nextLine();
         System.out.println("Indica el nombre del equipo local");
-        nombreEquipoLocal=lector.nextLine();
+        nombreEquipoLocal = lector.nextLine();
         System.out.println("Indica el nombre del equipo visitante");
-        nombreEquipoVisitante=lector.nextLine();
+        nombreEquipoVisitante = lector.nextLine();
     }
 
     public String getFecha() {
@@ -90,4 +91,6 @@ public class Partido {
                 "\nnombreEquipoLocal= " + nombreEquipoLocal +
                 "\nnombreEquipoVisitante= " + nombreEquipoVisitante;
     }
+
+
 }

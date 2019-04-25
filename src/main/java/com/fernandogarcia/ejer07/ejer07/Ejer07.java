@@ -1,10 +1,13 @@
 package com.fernandogarcia.ejer07.ejer07;
 
 import com.fernandogarcia.ejer07.utils.Lib;
+
+import java.util.ArrayList;
 import java.util.InputMismatchException;
-import static com.fernandogarcia.ejer07.utils.Lib.lector;
 
 public class Ejer07 {
+
+    public static ArrayList<Partido> listaGeneralPartidos = new ArrayList<>();
 
     public static void principal() {
 
@@ -18,7 +21,10 @@ public class Ejer07 {
             switch (opcion) {
                 case 1:
 
-                    //Dar de alta un partido nuevo
+                    //GentionPartidos.generarListaPartidos();
+                    //GentionPartidos.listaPartidos();
+                    System.out.println("--------------------------------------");
+                    GentionPartidos.altaPartido();
                     Lib.pausa();
                     break;
                 case 2:
@@ -105,6 +111,7 @@ public class Ejer07 {
         } while (opcion < 0 || opcion > 5);
         return opcion;
     }
+
 
 }
 
