@@ -201,6 +201,17 @@ public class Lib {
        }
         return fechaCorrecta;
     }
+    /**Busca un hueco dentro del array y nos devuelve la posicion */
+    public static int buscoHueco(Object[]array){
+        int pos=-1;
+        for(int i=0;i<=array.length;i++){
+            if(array[i]==null){
+                pos=i;
+                break;
+            }
+        }
+        return pos;
+    }
 
 
 }
