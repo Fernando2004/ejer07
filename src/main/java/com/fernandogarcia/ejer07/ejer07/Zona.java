@@ -8,6 +8,8 @@ public  class Zona {
 
     public static int auto=0;
     public static int libres=300;
+    public static int regFila=0;
+    public static int regAsiento=0;
     public static final int NUM_FILAS=3;
     public static final int NUM_ASIENTOS=100;
     public static final double PRECIO_VIP=80;
@@ -46,15 +48,8 @@ public  class Zona {
 
     @Override
     public String toString() {
-       String cadena="\nZona= " + nZona +
-                     "\narrayAsientos= " + Arrays.toString(arrayAsientos);
-                    if (arrayAsientos==null){
-                        cadena=cadena+"\nAsiento disponible ";
-                    }else{
-                        cadena=cadena+"\nAsiento no disponible ";
-                    }
-                    return cadena+
-                    "\nprecio= " +precioBase;
+       return "\nZona= " + nZona +
+              "\nAsientos libres = " + libres;
     }
 
     /**

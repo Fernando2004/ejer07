@@ -10,6 +10,7 @@ public class EntradaVip extends Entrada{
 
     public EntradaVip() {
         super();
+
     }
 
     public EntradaVip(Partido partido, Zona zona, int nFila, int nAsiento, int nTaquilla) {

@@ -5,15 +5,18 @@ import com.fernandogarcia.ejer07.utils.Lib;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
+import static com.fernandogarcia.ejer07.utils.Lib.lector;
+
 public class Ejer07 {
 
     public static ArrayList<Partido> listaGeneralPartidos = new ArrayList<>();
 
     public static void principal() {
 
+        GestionPartidos.generarListaPartidos();
+        //GestionPartidos.listaPartidos();
+
         //Rellenamos los arrays zonas
-
-
         int opcion;
 
         do {
@@ -21,13 +24,8 @@ public class Ejer07 {
             switch (opcion) {
                 case 1:
 
-
                     System.out.println("--------------------------------------");
-                    GentionPartidos.altaPartido();
-                    GentionPartidos.generarListaPartidos();
-                    GentionPartidos.listaPartidos();
-                    //GentionPartidos.generarListaPartidos();
-                    //GentionPartidos.listaPartidos();
+                    GestionPartidos.altaPartido();
                     Lib.pausa();
                     break;
                 case 2:
@@ -38,7 +36,7 @@ public class Ejer07 {
                         opcion1 = menuVenta();
                         switch (opcion) {
                             case 1:
-                                //selecciono el partido listar
+                                GestionEntradas.ventaEntradas();
                                 Lib.pausa();
                                 break;
                             case 2:
@@ -78,11 +76,12 @@ public class Ejer07 {
             System.out.println("0. Salir\n");
             System.out.print("Elija una opción: ");
             try {
-                opcion = Lib.leerOpcionMenu();
+                opcion = lector.nextInt();
 
             } catch (InputMismatchException e) {
+                System.out.println(e.getMessage());
             }
-            //lector.nextLine();
+            lector.nextLine();
             if (opcion < 0 || opcion > 2) {
                 System.out.println("Elija una opción del menú [0-2]");
             }

@@ -4,6 +4,9 @@ package com.fernandogarcia.ejer07.ejer07;
 import com.fernandogarcia.ejer07.misexception.FechaIncorrectaException;
 import com.fernandogarcia.ejer07.utils.Lib;
 
+import java.util.InputMismatchException;
+
+import static com.fernandogarcia.ejer07.utils.Lib.isFechaCorrecta;
 import static com.fernandogarcia.ejer07.utils.Lib.lector;
 
 public class Partido {
@@ -23,44 +26,46 @@ public class Partido {
     }
 
     public Partido() {
+
+        int opc=-1;
         boolean fechaCorrecta=false;
+
         System.out.println("----------PARTIDO DEL DIA---------------");
         do {
             System.out.println("Introduce la fecha del partido");
             this.fecha = lector.nextLine();
-            this.fecha = lector.nextLine();
-            try {
-                if (!Lib.isFechaCorrecta(fecha)) {
-                    throw new FechaIncorrectaException("La fecha es incorrecta recuerde (dd/MM/yyyy)");
-                }
-                else {
-                    fechaCorrecta=true;
-                }
-            } catch (FechaIncorrectaException e) {
-                System.out.println(e.getMessage());
+            fechaCorrecta=isFechaCorrecta(fecha);
+            if (!fechaCorrecta){
+                System.out.println("La fecha es incorrecta");
             }
         }while (!fechaCorrecta);
-        //this.fecha = lector.nextLine();
         //Meter el swhit con el enum
-        System.out.println("Indica la afluencia del partido");
-        System.out.println("1. ALTA AFLUENCIA");
-        System.out.println("2. MEDIA AFLUENCIA");
-        System.out.println("3. BAJA AFLUENCIA");
-        int opc = lector.nextInt();
-        do {
-            switch (opc) {
-                case 1:
-                    this.afluencia = Afluencia.ALTA_AFLUENCIA;
-                    break;
-                case 2:
-                    this.afluencia = Afluencia.MEDIA_AFLUENCIA;
-                case 3:
-                    this.afluencia = Afluencia.BAJA_AFLUENCIA;
-                    break;
-                default:
-                    System.out.println("Introduce una opcion valida");
+        do{
+            System.out.println("Indica la afluencia del partido");
+            System.out.println("1. ALTA AFLUENCIA");
+            System.out.println("2. MEDIA AFLUENCIA");
+            System.out.println("3. BAJA AFLUENCIA");
+            try {
+                opc = lector.nextInt();
+            }catch (InputMismatchException e){
+                System.out.println(e.getMessage());
             }
-        } while (afluencia == null);
+            if (opc < 0 || opc > 3) {
+                System.out.println("Elija una opción del menú [0-3]");
+            }
+                switch (opc) {
+                    case 1:
+                        this.afluencia = Afluencia.ALTA_AFLUENCIA;
+                        break;
+                    case 2:
+                        this.afluencia = Afluencia.MEDIA_AFLUENCIA;
+                    case 3:
+                        this.afluencia = Afluencia.BAJA_AFLUENCIA;
+                        break;
+                    //default:
+                        //System.out.println("Introduce una opcion valida");
+                }
+            } while (afluencia == null);
         lector.nextLine();
         System.out.println("Indica el nombre del equipo local");
         this.nombreEquipoLocal = lector.nextLine();

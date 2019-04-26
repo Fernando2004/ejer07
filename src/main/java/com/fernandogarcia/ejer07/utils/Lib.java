@@ -3,9 +3,9 @@ package com.fernandogarcia.ejer07.utils;
 import com.fernandogarcia.ejer07.ejer07.Entrada;
 import com.fernandogarcia.ejer07.misexception.NumerosNegativoException;
 import java.text.DecimalFormat;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.UUID;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Lib {
 
@@ -31,7 +31,7 @@ public class Lib {
     /**
      * Nos muestra la exception creada
      */
-    public static int leerOpcionMenu() throws NumerosNegativoException {
+    public static int leerOpcionMenu() throws NumerosNegativoException , InputMismatchException {
         int opc = lector.nextInt();
         if (opc < 0) {
             throw new NumerosNegativoException("Se tiene que introducir un valor positivo");
@@ -119,28 +119,19 @@ public class Lib {
             System.out.println();
         }
     }
-    /**comtrol de arrays*/
-    /*public static void arrayExepcion(int[]array){
+    public static void  listarArray(Object[] array){
+        int cont=0;
+        for (int i=0;i<array.length;i++){
 
-        int num=0;
-        boolean fin=false;
-        do {
-            try {
-                System.out.println("dime numero");
-                array[num]=lector.nextInt();
-                num++;
-
-            }catch(IndexOutofBoundsExcepcion e) {
-                System.out.println("te saliste del array");
-                fin=true;
-
-            }catch(InputMIsmatchException e){
-                System.out.println("caracter mal introducido");
-                lector.nextLine();
+            if (array[i]!=null){
+                System.out.println(array[i].toString());
+                cont++;
             }
-
-        }while(!fin);
-    }*/
+        }
+        if(cont==0){
+            System.out.println("No se encontraron elementos");
+        }
+    }
 
     /**
      * Nos muestra la posicion
@@ -197,28 +188,19 @@ public class Lib {
         }
         mostrarMatriz(array);
     }
-    //-------------------------Comprobar Fechas en Lib.--------------------------
-    /**Comprobamos la fecha */
-    public static boolean isFechaCorrecta(String fechaNacimiento){
-        boolean correcta=true;
-        String[] fechaTruncada=fechaNacimiento.split("/");
 
-        if(fechaTruncada.length!=3){
-            correcta=false;
-        }else{
-            int dia=Integer.parseInt(fechaTruncada[0]);
-            int mes=Integer.parseInt(fechaTruncada[1])-1;
-            int anyo=Integer.parseInt(fechaTruncada[2]);
-
-            if(dia<1||dia>31){
-                correcta=false;
-            }else if(mes<1||mes>12){
-                correcta=false;}
-            else if(anyo<1900){
-                correcta=false;
-            }
+    /**controlo las fechas entradas con String*/
+    public static boolean isFechaCorrecta(String fechaString){
+        boolean fechaCorrecta=true;
+        SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            formater.parse(fechaString);
         }
-        return correcta;
+       catch (ParseException e ){
+            fechaCorrecta=false;
+       }
+        return fechaCorrecta;
     }
+
 
 }
