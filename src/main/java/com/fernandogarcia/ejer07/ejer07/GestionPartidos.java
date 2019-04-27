@@ -63,11 +63,11 @@ public class GestionPartidos {
         return pos;
     }
 
-    public static int buscarPartidoZonaN(int nZona){
+    public static int buscarPartidoZona(int nZona,Zona[] arrayZonas){
         int pos = -1;
         int i = 0;
-        while (i <arrayZonasVip.length && pos == -1){
-            if ((arrayZonasVip[i]!=null)&&(arrayZonasVip[i].getnZona()==nZona)) {
+        while (i <arrayZonas.length && pos == -1){
+            if ((arrayZonas[i]!=null)&&(arrayZonas[i].getnZona()==nZona)) {
                 pos = i;
             }
             i++;

@@ -100,10 +100,8 @@ public  class Zona {
         mostrarMatriz(array);
     }
 
-
     public int[] asignarAsientoEntrada() {
         int[] asiento = new int[2];
-
 
         asiento[0] = regFila;
         asiento[1] = regAsiento;

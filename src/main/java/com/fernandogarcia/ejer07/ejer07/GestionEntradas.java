@@ -11,6 +11,8 @@ public class GestionEntradas {
     public static Zona[] arrayZonasVip = new Zona[NUM_ZONAS_VIP];
     public static Zona[] arrayZonasNormal = new Zona[NUM_ZONAS_NORMAL];
 
+    //Este bombo se crea una sola vez
+    public static Bombo bombo=new Bombo();
 
     public GestionEntradas() {
     }
@@ -43,14 +45,12 @@ public class GestionEntradas {
 
     public static void ventaEntradas() {
 
-
         System.out.println("Indica el tipo de entrada");
         System.out.println("1.Entrada vip");
         System.out.println("2.Entrada Normal");
         int opc = Lib.lector.nextInt();
 
-        if (opc == 1) {
-
+        if (opc==1||opc==2) {
 
             boolean fechaCorrecta = false;
             //Listo los partidos
@@ -75,37 +75,66 @@ public class GestionEntradas {
                 //Guardo la posicion donde esta el partido seleccionado
                 Partido partido = Ejer07.listaGeneralPartidos.get(pos);
 
-                //---------------------------------------------
-                //Bamos a zonas
-                Lib.listarArray(arrayZonasVip);
-                System.out.println("Indica la zona del estadio");
-                int idZona = Lib.lector.nextInt();
+                if (opc == 1) {//entradaVip
 
-                //Buscamos la idZona y la controlamos
+                    //---------------------------------------------
+                    //Bamos a zonas
+                    Lib.listarArray(arrayZonasVip);
+                    System.out.println("Indica la zona del estadio");
+                    int idZona = Lib.lector.nextInt();
 
-                int posZona = GestionPartidos.buscarPartidoZonaN(idZona);
-                if (posZona == -1) {
-                    System.out.println("No tememos zonas con ese numero");
-                } else {
-                    //Guardo la posicion donde esta la zona seleccionado
-                    Zona zona=arrayZonasVip[posZona];
-                    if (zona.getLibres()==0){
-                        System.out.println("Elija otra zona esta completa");
-                    }else {
+                    //Buscamos la idZona y la controlamos
 
-                        int[] asiento= zona.asignarAsientoEntrada();
+                    int posZona = GestionPartidos.buscarPartidoZona(idZona,arrayZonasVip);
+                    if (posZona == -1) {
+                        System.out.println("No tememos zonas con ese numero");
+                    } else {
+                        //Guardo la posicion donde esta la zona seleccionado
+                        Zona zona = arrayZonasVip[posZona];
+                        if (zona.getLibres() == 0) {
+                            System.out.println("Elija otra zona esta completa");
+                        } else {
 
-                        Entrada entradaVip=new EntradaVip(partido,zona,asiento[0],asiento[1],Lib.crearClave());
-                        zona.getArrayAsientos()[entradaVip.getnFila()][entradaVip.getnAsiento()]=entradaVip;
+                            int[] asiento = zona.asignarAsientoEntrada();
 
-                        System.out.println(entradaVip.toString());
+                            Entrada entradaVip = new EntradaVip(partido, zona, asiento[0], asiento[1], Lib.crearClave());
+                            zona.getArrayAsientos()[entradaVip.getnFila()][entradaVip.getnAsiento()] = entradaVip;
+
+                            System.out.println(entradaVip.toString());
+                        }
+                    }
+                } else {//entradaNormal
+                    //---------------------------------------------
+                    //Bamos a zonas
+                    Lib.listarArray(arrayZonasNormal);
+                    System.out.println("Indica la zona del estadio");
+                    int idZona = Lib.lector.nextInt();
+
+                    //Buscamos la idZona y la controlamos
+
+                    int posZona = GestionPartidos.buscarPartidoZona(idZona,arrayZonasNormal);
+                    if (posZona == -1) {
+                        System.out.println("No tememos zonas con ese numero");
+                    } else {
+                        //Guardo la posicion donde esta la zona seleccionado
+                        Zona zona = arrayZonasNormal[posZona];
+                        if (zona.getLibres() == 0) {
+                            System.out.println("Elija otra zona esta completa");
+                        } else {
+
+                            int[] asiento = zona.asignarAsientoEntrada();
+
+                            Entrada entradaNormal = new EntradaNormal(partido, zona, asiento[0], asiento[1],bombo.numeroSorteo());
+                            zona.getArrayAsientos()[entradaNormal.getnFila()][entradaNormal.getnAsiento()] = entradaNormal;
+
+                            System.out.println(entradaNormal.toString());
+                        }
                     }
                 }
             }
-
-
+        }else {
+            System.out.println("opcion incorrecta");
         }
-
 
     }
 

@@ -9,7 +9,7 @@ public class Bombo {
     private ArrayList<Integer> listaNumeros=new ArrayList<Integer>();
 
     public Bombo() {
-        for (int i=1;i<=7200;i++){
+        for (int i=1;i<=6000;i++){
             listaNumeros.add(i);
         }
     }
