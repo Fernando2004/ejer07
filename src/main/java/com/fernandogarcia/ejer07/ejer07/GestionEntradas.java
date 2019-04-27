@@ -44,12 +44,16 @@ public class GestionEntradas {
 
 
     public static void ventaEntradas() {
+        System.out.println("------Indica la zona del estadio--------");
+        int zonaEst=0;
+        zonaEst=zonaEstadio();
 
         System.out.println("Indica el tipo de entrada");
         System.out.println("1.Entrada vip");
         System.out.println("2.Entrada Normal");
         int opc = Lib.lector.nextInt();
-
+        Lib.lector.nextLine();
+        //---------------------------
         if (opc==1||opc==2) {
 
             boolean fechaCorrecta = false;
@@ -80,11 +84,14 @@ public class GestionEntradas {
                     //---------------------------------------------
                     //Bamos a zonas
                     Lib.listarArray(arrayZonasVip);
-                    System.out.println("Indica la zona del estadio");
+
+                    //Corregir
+                    System.out.println("Indica lugar de la zona vip (1,2,3,4)");
+                    //utilizo la variable zonaEst
                     int idZona = Lib.lector.nextInt();
 
-                    //Buscamos la idZona y la controlamos
 
+                    //Buscamos la idZona y la controlamos en cada array
                     int posZona = GestionPartidos.buscarPartidoZona(idZona,arrayZonasVip);
                     if (posZona == -1) {
                         System.out.println("No tememos zonas con ese numero");
@@ -107,11 +114,11 @@ public class GestionEntradas {
                     //---------------------------------------------
                     //Bamos a zonas
                     Lib.listarArray(arrayZonasNormal);
-                    System.out.println("Indica la zona del estadio");
+                    //corregir
+                    System.out.println("Indica el lugar de la zona normal (1 al 20)");
                     int idZona = Lib.lector.nextInt();
 
                     //Buscamos la idZona y la controlamos
-
                     int posZona = GestionPartidos.buscarPartidoZona(idZona,arrayZonasNormal);
                     if (posZona == -1) {
                         System.out.println("No tememos zonas con ese numero");
@@ -138,5 +145,46 @@ public class GestionEntradas {
 
     }
 
+
+    //Gestiono las zonas
+    public static int zonaEstadio() {
+        int opcion = 0;
+            System.out.println("1-Fondo Norte");
+            System.out.println("2-Fondo Sur");
+            System.out.println("3-Tribuna");
+            System.out.println("4-Lateral");
+            System.out.println("0-Zona seleccionada");
+
+            opcion = Lib.lector.nextInt();
+            //para despues de guardar un valor numerico un nextLine();
+            Lib.lector.nextLine();
+            switch (opcion) {
+                case 1: System.out.println("A seleccionado el Fondo Norte");
+                        System.out.println("--------------------------");
+
+                    break;
+                case 2: System.out.println("A seleccionado el Fondo Sur");
+                        System.out.println("--------------------------");
+
+                    break;
+                case 3: System.out.println("A seleccionado la Tribuna");
+                        System.out.println("--------------------------");
+
+                    break;
+                case 4: System.out.println("A seleccionado el Lateral");
+                        System.out.println("--------------------------");
+
+                    break;
+                case 0: System.out.println("Seleccion correcta");
+                        System.out.println("--------------------------");
+
+                    break;
+                default:
+                    System.out.println("Introduce una opcion valida");
+                    //System.out.println("--------------------------");
+
+            }
+    return opcion;
+    }
 }
 

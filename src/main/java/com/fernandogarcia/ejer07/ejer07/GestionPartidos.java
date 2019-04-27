@@ -1,9 +1,7 @@
 package com.fernandogarcia.ejer07.ejer07;
 
 import java.util.ArrayList;
-
 import static com.fernandogarcia.ejer07.ejer07.Ejer07.listaGeneralPartidos;
-import static com.fernandogarcia.ejer07.ejer07.GestionEntradas.arrayZonasVip;
 
 public class GestionPartidos {
 
@@ -18,7 +16,7 @@ public class GestionPartidos {
             System.out.println("El partido ya existe");
         }else {
             listaGeneralPartidos.add(partido);
-            System.out.println("El partido introducido correctamente");
+            System.out.println("El partido se ha introducido correctamente");
         }
     }
 

@@ -1,9 +1,7 @@
 package com.fernandogarcia.ejer07.utils;
 
-import com.fernandogarcia.ejer07.ejer07.Bombo;
 import com.fernandogarcia.ejer07.ejer07.Entrada;
 import com.fernandogarcia.ejer07.misexception.NumerosNegativoException;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -47,101 +45,22 @@ public class Lib {
         return clave;
     }
 
-    /**
-     * Aplicamos precios
-     */
-    static void descuento() {
-        Scanner lector = new Scanner(System.in);
-        DecimalFormat df = new DecimalFormat("#.##");
-        double precio = 0, porcentaje, descuento, articulo;
+    //Este no lo hace bien
 
-        System.out.println("Dime el precio base de la zona ");
-        articulo = lector.nextDouble();
-        System.out.println("Dime el descuento a aplicar en % ");
-        porcentaje = lector.nextDouble();
-
-        descuento = (articulo / 100) * porcentaje;
-        precio = articulo - descuento;
-
-        System.out.println("El descuento aplicado es de " + df.format(descuento) + " euros");
-        System.out.println("El precio de la entrada con un porcentaje de " + porcentaje + " % es de " + df.format(precio) + " €");
-    }
-
-    /**
-     * Cambia el Precio
-     */
-    public static double cambiaPrecio(double porcentaje) {
-
-        double precioBase = 350;
-        double cambio = precioBase * porcentaje / 100;
-
-        return cambio;
-    }
-
-    /**
-     * No retorna el valor maximo del array doble
-     */
-    public static int arrayMax(int[][] array) {
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                if (array[i][j] > max) {
-                    max = array[i][j];
-                }
-            }
-        }
-        return max;
-    }
-
-    /**
-     * Muestra el contenido del array doble
-     */
-    public static void mostrarMatriz(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                System.out.print(array[i][j] + ",");
-            }
-            System.out.println();
-        }
-    }
     public static void  listarArray(Object[] array){
         int cont=0;
         for (int i=0;i<array.length;i++){
 
             if (array[i]!=null){
                 System.out.println(array[i].toString());
-                cont++;
             }
+            cont++;
         }
         if(cont==0){
             System.out.println("No se encontraron elementos");
         }
     }
 
-    /**
-     * Nos muestra la posicion
-     */
-    public static void posicion(char[] array) {
-        System.out.println("Las posiciones del array  contienen ");
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
-    }
-
-    /**
-     * Nos da la pos del la silla vacia
-     */
-    public static int seleccionaSillaVacia(Entrada[] clase) {
-        int pos = -1;//si el array esta lleno nos devolvera el -1;
-
-        for (int i = 0; i < clase.length; i++) {
-            if (clase[i] == null) {
-                pos = i;
-                break;//al primer hueco para la busqueda;
-            }
-        }
-        return pos;
-    }
     /**Elimino la entrada devuelta pasandole su identificador*/
     public static void eliminaEntrada(Entrada[]clase,int id) {
         int pos=-1;
@@ -159,19 +78,6 @@ public class Lib {
         if (pos==-1)
             System.out.println("Entrada no encontrada ");
     }
-    /**
-     * Rellenamos el array doble con numeros del 0 al
-     */
-    public  void numeraSilla(int[][] array) {
-
-        int num = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                array[i][j] = num++;
-            }
-        }
-        mostrarMatriz(array);
-    }
 
     /**controlo las fechas entradas con String*/
     public static boolean isFechaCorrecta(String fechaString){
@@ -185,17 +91,7 @@ public class Lib {
        }
         return fechaCorrecta;
     }
-    /**Busca un hueco dentro del array y nos devuelve la posicion */
-    public static int buscoHueco(Object[]array){
-        int pos=-1;
-        for(int i=0;i<=array.length;i++){
-            if(array[i]==null){
-                pos=i;
-                break;
-            }
-        }
-        return pos;
-    }
+
 
 
 }

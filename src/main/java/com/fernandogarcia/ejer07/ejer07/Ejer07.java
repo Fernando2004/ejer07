@@ -59,11 +59,14 @@ public class Ejer07 {
                                 Lib.pausa();
                                 break;
                             case 0:
-                                System.out.println("Hasta pronto");
+                                System.out.println("Menu inicial");
                                 break;
                         }
                     } while (opcVenta != 0);
+                    //Lib.pausa();
+                    break;
                 case 3:
+
                     System.out.println("El numero ganador en este partido es: "+GestionPartidos.sorteo());
                     Lib.pausa();
                     break;

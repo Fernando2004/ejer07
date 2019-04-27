@@ -1,8 +1,9 @@
 package com.fernandogarcia.ejer07.ejer07;
 
+import com.fernandogarcia.ejer07.utils.Lib;
+
 import java.util.Arrays;
 
-import static com.fernandogarcia.ejer07.utils.Lib.mostrarMatriz;
 
 public  class Zona {
 
@@ -86,19 +87,7 @@ public  class Zona {
               "\nAsientos libres = " + libres;
     }
 
-    /**
-     * Rellenamos el array doble con numeros del 0 al
-     */
-    public  void numeraSilla(int[][] array) {
 
-        int num = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                array[i][j] = num++;
-            }
-        }
-        mostrarMatriz(array);
-    }
 
     public int[] asignarAsientoEntrada() {
         int[] asiento = new int[2];
@@ -117,5 +106,9 @@ public  class Zona {
 
         return asiento;
     }
+
+
+
+
 
 }

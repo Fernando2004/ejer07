@@ -104,7 +104,7 @@ public class Partido {
 
     @Override
     public String toString() {
-        return "Partido\n" +
+        return "\n----Partido por disputar----" +
                 "\nfecha= " + fecha +
                 "\nafluencia= " + afluencia +
                 "\nnombreEquipoLocal= " + nombreEquipoLocal +
