@@ -124,7 +124,7 @@ public class GestionEntradas {
 
                             int[] asiento = zona.asignarAsientoEntrada();
 
-                            Entrada entradaNormal = new EntradaNormal(partido, zona, asiento[0], asiento[1],bombo.numeroSorteo());
+                            Entrada entradaNormal = new EntradaNormal(partido, zona, asiento[0], asiento[1],bombo.numeroSorteoEntrada());
                             zona.getArrayAsientos()[entradaNormal.getnFila()][entradaNormal.getnAsiento()] = entradaNormal;
 
                             System.out.println(entradaNormal.toString());

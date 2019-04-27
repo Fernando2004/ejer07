@@ -1,5 +1,6 @@
 package com.fernandogarcia.ejer07.utils;
 
+import com.fernandogarcia.ejer07.ejer07.Bombo;
 import com.fernandogarcia.ejer07.ejer07.Entrada;
 import com.fernandogarcia.ejer07.misexception.NumerosNegativoException;
 import java.text.DecimalFormat;
@@ -24,9 +25,7 @@ public class Lib {
     }
 
     public static int aleatorio(int min,int max) {
-
         Random rd = new Random();
-
         return rd.nextInt(max-min+1)-min;
     }
 
@@ -160,7 +159,6 @@ public class Lib {
         if (pos==-1)
             System.out.println("Entrada no encontrada ");
     }
-
     /**
      * Rellenamos el array doble con numeros del 0 al
      */

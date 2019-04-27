@@ -75,6 +75,15 @@ public class GestionPartidos {
         return pos;
     }
 
+    /**Metodo para realizar el sorteo*/
+    public static int sorteo() {
+        int resultado;
+        Bombo bomboSoteo=new Bombo();
+
+        resultado=bomboSoteo.numeroGanador();
+
+        return resultado;
+    }
 
 
 

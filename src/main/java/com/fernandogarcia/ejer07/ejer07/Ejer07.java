@@ -65,6 +65,9 @@ public class Ejer07 {
                                 break;
                         }
                     } while (opcion1 != 0);
+                case 3:
+                    System.out.println("El numero ganador en este partido es"+GestionPartidos.sorteo());
+                    Lib.pausa();
                     break;
                 case 0:
                     System.out.println("Hasta pronto");
@@ -81,6 +84,7 @@ public class Ejer07 {
             System.out.println("*-------- MENU --------*");
             System.out.println("1. Partido nuevo");
             System.out.println("2. Gestion de Entradas");
+            System.out.println("3. ------Sorteo-------");
             System.out.println("-----------------------");
             System.out.println("0. Salir\n");
             System.out.print("Elija una opción: ");
@@ -91,10 +95,10 @@ public class Ejer07 {
                 System.out.println(e.getMessage());
             }
             lector.nextLine();
-            if (opcion < 0 || opcion > 2) {
-                System.out.println("Elija una opción del menú [0-2]");
+            if (opcion < 0 || opcion > 3) {
+                System.out.println("Elija una opción del menú [0-3]");
             }
-        } while (opcion < 0 || opcion > 2);
+        } while (opcion < 0 || opcion > 3);
         return opcion;
     }
     //--------------------------------------------------------------------
