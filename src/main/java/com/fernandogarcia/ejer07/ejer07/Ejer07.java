@@ -24,18 +24,16 @@ public class Ejer07 {
             opcion = menuPrincipal();
             switch (opcion) {
                 case 1:
-
                     System.out.println("--------------------------------------");
                     GestionPartidos.altaPartido();
                     Lib.pausa();
                     break;
                 case 2:
                     //----------Menu de venta de entradas---------------
-                    int opcion1;
-
+                    int opcVenta;
                     do {
-                        opcion1 = menuVenta();
-                        switch (opcion) {
+                        opcVenta = menuVenta();
+                        switch (opcVenta) {
                             case 1:
                                 GestionEntradas.ventaEntradas();
                                 Lib.pausa();
@@ -64,9 +62,9 @@ public class Ejer07 {
                                 System.out.println("Hasta pronto");
                                 break;
                         }
-                    } while (opcion1 != 0);
+                    } while (opcVenta != 0);
                 case 3:
-                    System.out.println("El numero ganador en este partido es"+GestionPartidos.sorteo());
+                    System.out.println("El numero ganador en este partido es: "+GestionPartidos.sorteo());
                     Lib.pausa();
                     break;
                 case 0:

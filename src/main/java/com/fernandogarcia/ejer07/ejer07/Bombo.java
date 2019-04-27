@@ -6,10 +6,12 @@ import java.util.ArrayList;
 
 public class Bombo {
 
+    /**con la listaNumeros cogemos los numeros y los entregamos con la entrada
+     * y con listaSorteo cogemos solo la combinacion ganadora*/
     private ArrayList<Integer> listaNumeros=new ArrayList<Integer>();
     private ArrayList<Integer> listaSorteo=new ArrayList<Integer>();
 
-    /**Llenamos la lista*/
+    /**Llenamos la lista menos los que son de tipo vip*/
     public Bombo() {
         for (int i=1;i<=6000;i++){
 
@@ -27,7 +29,7 @@ public class Bombo {
     /**Saco un numero de forma aleatoria para el sorteo*/
     public int numeroGanador(){
         int aleat= Lib.aleatorio(1,listaSorteo.size());
-        listaNumeros.remove(aleat);
+        listaSorteo.remove(aleat);
         return aleat;
     }
 
