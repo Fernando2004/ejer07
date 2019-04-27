@@ -6,19 +6,19 @@ public class EntradaVip extends Entrada{
 
 
 
-    private int nTaquilla;
+    private String nTaquilla;
 
     public EntradaVip() {
         super();
 
     }
 
-    public EntradaVip(Partido partido, Zona zona, int nFila, int nAsiento, int nTaquilla) {
+    public EntradaVip(Partido partido, Zona zona, int nFila, int nAsiento, String nTaquilla) {
         super(partido, zona, nFila, nAsiento);
         this.nTaquilla = nTaquilla;
     }
 
-    public int getnTaquilla() {
+    public String getnTaquilla() {
         return nTaquilla;
     }
 

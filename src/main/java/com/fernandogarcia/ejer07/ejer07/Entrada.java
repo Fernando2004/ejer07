@@ -23,6 +23,15 @@ public abstract class Entrada {
         this.nFila = nFila;
         this.nAsiento = nAsiento;
         //Asignar predio de entrada
+        Afluencia afluencia=partido.getAfluencia();
+        switch (afluencia){
+            case ALTA_AFLUENCIA:
+                precioEntrada=zona.getPrecioBase()*1.3;
+            case MEDIA_AFLUENCIA:
+                precioEntrada=zona.getPrecioBase();
+            case BAJA_AFLUENCIA:
+                precioEntrada=zona.getPrecioBase()*0.75;
+        }
     }
 
     public int getId() {

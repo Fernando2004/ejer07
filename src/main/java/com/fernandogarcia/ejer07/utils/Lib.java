@@ -23,9 +23,11 @@ public class Lib {
         lector.nextLine();
     }
 
-    public static int aleatorio() {
+    public static int aleatorio(int min,int max) {
+
         Random rd = new Random();
-        return rd.nextInt();
+
+        return rd.nextInt(max-min+1)-min;
     }
 
     /**
@@ -90,22 +92,6 @@ public class Lib {
             }
         }
         return max;
-    }
-
-
-
-    /**
-     * Rellenamos el array doble con las claves de cada asiento
-     */
-    public static void rellenaArrayDobleConClaveTaquilla(int[][] array) {
-
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                //Lo paso a String
-                array[i][j] = Integer.parseInt(crearClave());
-            }
-        }
-        mostrarMatriz(array);
     }
 
     /**

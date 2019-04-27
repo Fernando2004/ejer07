@@ -11,6 +11,7 @@ public class Ejer07 {
 
     public static ArrayList<Partido> listaGeneralPartidos = new ArrayList<>();
 
+
     public static void principal() {
 
         GestionPartidos.generarListaPartidos();
@@ -40,15 +41,23 @@ public class Ejer07 {
                                 Lib.pausa();
                                 break;
                             case 2:
+
+                                //GestionEntrada.devolucioEntradas();
                                 Lib.pausa();
                                 break;
                             case 3:
+
+                                //asientosOcupados();
                                 Lib.pausa();
                                 break;
                             case 4:
+
+                                //asientosLibres();
                                 Lib.pausa();
                                 break;
                             case 5:
+
+                                //recaudacionPartido();
                                 Lib.pausa();
                                 break;
                             case 0:

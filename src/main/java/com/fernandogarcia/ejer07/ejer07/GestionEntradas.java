@@ -12,6 +12,25 @@ public class GestionEntradas {
     public static Zona[] arrayZonasNormal = new Zona[NUM_ZONAS_NORMAL];
 
 
+    public GestionEntradas() {
+    }
+
+    public static Zona[] getArrayZonasVip() {
+        return arrayZonasVip;
+    }
+
+    public static void setArrayZonasVip(Zona[] arrayZonasVip) {
+        GestionEntradas.arrayZonasVip = arrayZonasVip;
+    }
+
+    public static Zona[] getArrayZonasNormal() {
+        return arrayZonasNormal;
+    }
+
+    public static void setArrayZonasNormal(Zona[] arrayZonasNormal) {
+        GestionEntradas.arrayZonasNormal = arrayZonasNormal;
+    }
+
     public static void anyadirZonasArray() {
         for (int i = 0; i < arrayZonasVip.length; i++) {
             arrayZonasVip[i] = new Zona(Zona.PRECIO_VIP);
@@ -31,7 +50,7 @@ public class GestionEntradas {
         int opc = Lib.lector.nextInt();
 
         if (opc == 1) {
-            EntradaVip entradaVip = new EntradaVip();
+
 
             boolean fechaCorrecta = false;
             //Listo los partidos
@@ -57,7 +76,7 @@ public class GestionEntradas {
                 Partido partido = Ejer07.listaGeneralPartidos.get(pos);
 
                 //---------------------------------------------
-                //Bamos a zonas ahora
+                //Bamos a zonas
                 Lib.listarArray(arrayZonasVip);
                 System.out.println("Indica la zona del estadio");
                 int idZona = Lib.lector.nextInt();
@@ -65,11 +84,22 @@ public class GestionEntradas {
                 //Buscamos la idZona y la controlamos
 
                 int posZona = GestionPartidos.buscarPartidoZonaN(idZona);
-                if (pos == -1) {
+                if (posZona == -1) {
                     System.out.println("No tememos zonas con ese numero");
                 } else {
                     //Guardo la posicion donde esta la zona seleccionado
-                    Zona zona;
+                    Zona zona=arrayZonasVip[posZona];
+                    if (zona.getLibres()==0){
+                        System.out.println("Elija otra zona esta completa");
+                    }else {
+
+                        int[] asiento= zona.asignarAsientoEntrada();
+
+                        Entrada entradaVip=new EntradaVip(partido,zona,asiento[0],asiento[1],Lib.crearClave());
+                        zona.getArrayAsientos()[entradaVip.getnFila()][entradaVip.getnAsiento()]=entradaVip;
+
+                        System.out.println(entradaVip.toString());
+                    }
                 }
             }
 

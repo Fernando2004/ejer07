@@ -1,9 +1,6 @@
 package com.fernandogarcia.ejer07.ejer07;
 
 
-import com.fernandogarcia.ejer07.misexception.FechaIncorrectaException;
-import com.fernandogarcia.ejer07.utils.Lib;
-
 import java.util.InputMismatchException;
 
 import static com.fernandogarcia.ejer07.utils.Lib.isFechaCorrecta;
@@ -62,8 +59,8 @@ public class Partido {
                     case 3:
                         this.afluencia = Afluencia.BAJA_AFLUENCIA;
                         break;
-                    //default:
-                        //System.out.println("Introduce una opcion valida");
+                    default:
+                        System.out.println("Introduce una opcion valida");
                 }
             } while (afluencia == null);
         lector.nextLine();
