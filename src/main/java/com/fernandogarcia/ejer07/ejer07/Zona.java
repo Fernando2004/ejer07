@@ -19,8 +19,7 @@ public  class Zona {
     private Entrada[][] arrayAsientos;//arrayAsientos[0]
     private double precioBase;
     private int libres=300;
-    private int regFila=1;
-    private int regAsiento=1;
+
 
 
     public Zona(double precio) {
@@ -57,21 +56,7 @@ public  class Zona {
         this.libres = libres;
     }
 
-    public int getRegFila() {
-        return regFila;
-    }
 
-    public void setRegFila(int regFila) {
-        this.regFila = regFila;
-    }
-
-    public int getRegAsiento() {
-        return regAsiento;
-    }
-
-    public void setRegAsiento(int regAsiento) {
-        this.regAsiento = regAsiento;
-    }
 
     public double getPrecioBase() {
         return precioBase;
@@ -85,23 +70,34 @@ public  class Zona {
     public String toString() {
        return "\nZona= " + nZona +
               "\nAsientos libres = " + libres;
+
+    }
+    public String toStringEntrada() {
+       return "\nNumero de Zona= " + nZona;
+
     }
 
+public void liberarAsiento(int nFila,int nAsiento){
 
+        arrayAsientos[nFila][nAsiento]=null;
+         libres++;
+}
 
     public int[] asignarAsientoEntrada() {
         int[] asiento = new int[2];
 
-        asiento[0] = regFila;
-        asiento[1] = regAsiento;
-
-        if(regAsiento==100){
-            regAsiento=1;
-            regFila++;
-        }else {
-            regAsiento++;
+        int i=0;
+        int j=0;
+        while (i<arrayAsientos.length && arrayAsientos[i][j]!=null){
+            while (j<arrayAsientos[0].length && arrayAsientos[i][j]!=null){
+                j++;
+            }
+            i++;
         }
-        regAsiento++;
+        asiento[0] = i;
+        asiento[1] = j;
+
+
         this.libres--;
 
         return asiento;

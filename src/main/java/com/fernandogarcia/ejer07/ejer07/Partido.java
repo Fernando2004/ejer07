@@ -109,6 +109,13 @@ public class Partido {
                 "\nafluencia= " + afluencia +
                 "\nnombreEquipoLocal= " + nombreEquipoLocal +
                 "\nnombreEquipoVisitante= " + nombreEquipoVisitante;
+
+    }
+    public String toStringEntrada() {
+        return
+                "\nfecha= " + fecha +
+                "\nnombreEquipoLocal= " + nombreEquipoLocal +
+                "\nnombreEquipoVisitante= " + nombreEquipoVisitante;
     }
 
 

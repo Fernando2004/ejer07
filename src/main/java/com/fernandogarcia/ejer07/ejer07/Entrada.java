@@ -18,6 +18,7 @@ public abstract class Entrada {
     }
 
     public Entrada(Partido partido, Zona zona, int nFila, int nAsiento) {
+        this.id=++auto;
         this.partido = partido;
         this.zona = zona;
         this.nFila = nFila;
@@ -80,12 +81,13 @@ public abstract class Entrada {
 
     @Override
     public String toString() {
-        return "Entrada\n" +
+        return
                 "\nid= " + id +
-                "\npartido= " + partido +
-                "\nzona= " + zona +
+                "\npartido= " + partido.toStringEntrada() +
+                "\nzona= " + zona.toStringEntrada()+
                 "\nFila= " + nFila +
                 "\nAsiento= " + nAsiento+
                 "\nPrecio entrada= " + precioEntrada;
     }
+
 }

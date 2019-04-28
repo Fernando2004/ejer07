@@ -76,15 +76,10 @@ public class GestionPartidos {
     /**Metodo para realizar el sorteo*/
     public static int sorteo() {
         int resultado;
-        Bombo bomboSoteo=new Bombo();
-
-        resultado=bomboSoteo.numeroGanador();
-
+        Bombo bomboSorteo=new Bombo();
+        resultado=bomboSorteo.numeroSorteoEntrada();
         return resultado;
     }
-
-
-
 
 
 

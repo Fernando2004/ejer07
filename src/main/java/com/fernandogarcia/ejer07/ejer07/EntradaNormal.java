@@ -22,12 +22,9 @@ public class EntradaNormal extends Entrada{
 
     @Override
     public String toString() {
-        return "EntradaNormal\n" +
-                "\nNúmero de Sorteo= " + nSorteo +
-                "\nid= " + id +
-                "\npartido= " + partido +
-                "\nzona= " + zona +
-                "\nFila= " + nFila +
-                "\nAsiento= " + nAsiento;
+        return "------------------------\n" +
+                "EntradaNormal\n" +
+                super.toString()+
+                "\nNúmero de Sorteo= " + nSorteo;
     }
 }

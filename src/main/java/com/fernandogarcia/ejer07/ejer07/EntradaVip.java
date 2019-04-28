@@ -24,12 +24,10 @@ public class EntradaVip extends Entrada{
 
     @Override
     public String toString() {
-        return "EntradaVip\n" +
-                "\nNumero de Taquilla= " +Lib.crearClave()+
-                "\nid= " + id +
-                "\npartido= " + partido +
-                "\nzona= " + zona +
-                "\nFila= " + nFila +
-                "\nAsiento= " + nAsiento;
+        return  "--------------------------\n"+
+                "EntradaVip\n" +
+                super.toString()+
+                "\nNumero de Taquilla= " +Lib.crearClave();
+
     }
 }

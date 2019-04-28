@@ -14,7 +14,10 @@ public class Ejer07 {
 
     public static void principal() {
 
+        //Estos los gerneramos para verlos para tener algunos datos
         GestionPartidos.generarListaPartidos();
+        //Este lo generamos para que funcione bien y solo una vez
+        GestionEntradas.anyadirZonasArray();
         //GestionPartidos.listaPartidos();
 
         //Rellenamos los arrays zonas
@@ -33,6 +36,7 @@ public class Ejer07 {
                     int opcVenta;
                     do {
                         opcVenta = menuVenta();
+                        lector.nextLine();
                         switch (opcVenta) {
                             case 1:
                                 GestionEntradas.ventaEntradas();
@@ -40,22 +44,35 @@ public class Ejer07 {
                                 break;
                             case 2:
 
-                                //GestionEntrada.devolucioEntradas();
+                                GestionEntradas.devolucionEntrada();
                                 Lib.pausa();
                                 break;
                             case 3:
 
-                                //asientosOcupados();
+                                System.out.println(GestionEntradas.asientosOcupados());
                                 Lib.pausa();
                                 break;
                             case 4:
 
-                                //asientosLibres();
+                                System.out.println(GestionEntradas.asientosLibres());
                                 Lib.pausa();
                                 break;
                             case 5:
 
-                                //recaudacionPartido();
+                                GestionPartidos.listarPartidos();
+
+                                System.out.println("Indica la fecha del partido el cual ver su recaudación ");
+                                String fechaPartido= Lib.lector.nextLine();
+                                int pos=GestionPartidos.buscarPartidoFecha(fechaPartido);
+                                if (pos==-1){
+                                    System.out.println("Patido no encontrado");
+                                }
+                                else {
+                                    //me traigo el partido
+                                    Partido partido=listaGeneralPartidos.get(pos);
+                                    System.out.println("La recaudacion total del partido elegido es: "+
+                                            GestionEntradas.recaudacionPartido(partido));
+                                }
                                 Lib.pausa();
                                 break;
                             case 0:

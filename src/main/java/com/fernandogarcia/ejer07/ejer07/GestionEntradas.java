@@ -2,17 +2,23 @@ package com.fernandogarcia.ejer07.ejer07;
 
 import com.fernandogarcia.ejer07.utils.Lib;
 
+import java.util.ArrayList;
+
 public class GestionEntradas {
 
     public static final int NUM_ZONAS_VIP = 4;
     public static final int NUM_ZONAS_NORMAL = 20;
-
+    public static final int AFORO_TOTAL=7200;
 
     public static Zona[] arrayZonasVip = new Zona[NUM_ZONAS_VIP];
     public static Zona[] arrayZonasNormal = new Zona[NUM_ZONAS_NORMAL];
 
+    //Creo una lista de entradas vendidas para agilizar las consultas
+    public static ArrayList<Entrada>listaEntradasVendidas=new ArrayList<Entrada>();
+
     //Este bombo se crea una sola vez
-    public static Bombo bombo=new Bombo();
+    public static Bombo bomboEntradas=new Bombo();
+
 
     public GestionEntradas() {
     }
@@ -33,6 +39,7 @@ public class GestionEntradas {
         GestionEntradas.arrayZonasNormal = arrayZonasNormal;
     }
 
+    /**añadimos una zona a las entradas vip y normal*/
     public static void anyadirZonasArray() {
         for (int i = 0; i < arrayZonasVip.length; i++) {
             arrayZonasVip[i] = new Zona(Zona.PRECIO_VIP);
@@ -44,9 +51,6 @@ public class GestionEntradas {
 
 /**Realiza venta entrada vip y normal*/
     public static void ventaEntradas() {
-        System.out.println("------Indica la zona del estadio--------");
-        int zonaEst=0;
-        zonaEst=zonaEstadio();
 
         System.out.println("Indica el tipo de entrada");
         System.out.println("1.Entrada vip");
@@ -84,12 +88,8 @@ public class GestionEntradas {
                     //---------------------------------------------
                     //Bamos a zonas
                     Lib.listarArray(arrayZonasVip);
-
-                    //Corregir
-                    System.out.println("Indica lugar de la zona vip (1,2,3,4)");
-                    //utilizo la variable zonaEst
+                    System.out.println("Indica la zona del estadio");
                     int idZona = Lib.lector.nextInt();
-
 
                     //Buscamos la idZona y la controlamos en cada array
                     int posZona = GestionPartidos.buscarPartidoZona(idZona,arrayZonasVip);
@@ -106,7 +106,7 @@ public class GestionEntradas {
 
                             Entrada entradaVip = new EntradaVip(partido, zona, asiento[0], asiento[1], Lib.crearClave());
                             zona.getArrayAsientos()[entradaVip.getnFila()][entradaVip.getnAsiento()] = entradaVip;
-
+                            listaEntradasVendidas.add(entradaVip);
                             System.out.println(entradaVip.toString());
                         }
                     }
@@ -114,8 +114,7 @@ public class GestionEntradas {
                     //---------------------------------------------
                     //Bamos a zonas
                     Lib.listarArray(arrayZonasNormal);
-                    //corregir
-                    System.out.println("Indica el lugar de la zona normal (1 al 20)");
+                    System.out.println("Indica la zona del estadio");
                     int idZona = Lib.lector.nextInt();
 
                     //Buscamos la idZona y la controlamos
@@ -131,9 +130,10 @@ public class GestionEntradas {
 
                             int[] asiento = zona.asignarAsientoEntrada();
 
-                            Entrada entradaNormal = new EntradaNormal(partido, zona, asiento[0], asiento[1],bombo.numeroSorteoEntrada());
+                            Entrada entradaNormal = new EntradaNormal(partido, zona, asiento[0], asiento[1],bomboEntradas.numeroSorteoEntrada());
                             zona.getArrayAsientos()[entradaNormal.getnFila()][entradaNormal.getnAsiento()] = entradaNormal;
-
+                            //Despues de venderla la guardo en la lista
+                            listaEntradasVendidas.add(entradaNormal);
                             System.out.println(entradaNormal.toString());
                         }
                     }
@@ -144,67 +144,68 @@ public class GestionEntradas {
         }
 
     }
-    /**Elimino la entrada devuelta pasandole su identificador*/
-    public static void devolucionEntrada(Object[]array,int id) {
-        int pos=-1;
+    /**Elimino la entrada devuelta pasandole su identificador y retorno el Nºsorteo*/
+    public static void devolucionEntrada() {
 
-        for (int i = 0; i < array.length; i++) {
-            //si la i del array no es nula y es igual al id que te digo
-            /*if ((array[i]!=null)&&(array[i].getArrayVip[i]==id)) {
-                //me lo borras
-                array[i]=null;
-                System.out.println("Se elimino la entrada correctamente");
-                //
-                pos=i;
-                break;
-            }*/
-            //Aumento las plazas libres metemos el numero en el bombo
+        System.out.println("Indica el id de la entrada");
+        int idEntrada = Lib.lector.nextInt();
+        Lib.lector.nextLine();
+        //me guardo la pos y miro que exista
+        int pos=buscarEntradaId(idEntrada);
 
+        if (pos!=-1){
+
+            //Ahora traigo la entrada y la guardo
+            Entrada entradaDevolver=listaEntradasVendidas.get(pos);
+            //la elimino con su posicion
+            listaEntradasVendidas.remove(pos);
+            //devolvemos desde su zona con el metodo y sus dos parametros
+            entradaDevolver.getZona().liberarAsiento(entradaDevolver.getnFila(),entradaDevolver.getnAsiento());
+            //devolver nº al bombo con la entradas normales
+            if (entradaDevolver instanceof EntradaNormal) {
+
+                bomboEntradas.getListaNumeros().add(((EntradaNormal) entradaDevolver).getnSorteo());
+            }
+            System.out.println("Entrada devuelta correctamente");
         }
-        if (pos==-1)
-            System.out.println("Entrada no encontrada ");
+        else {
+            System.out.println("Entrada no encontrada");
+        }
+
+    }
+
+    private static int buscarEntradaId(int idEntrada) {
+        //busquedas con while
+        int pos=-1;
+        int i=0;
+        while (i<listaEntradasVendidas.size()&& pos==-1){
+            if (listaEntradasVendidas.get(i).getId()==idEntrada){
+                pos=i;
+            }
+            i++;
+        }
+        return pos;
+    }
+
+    public static int asientosOcupados() {
+
+        return listaEntradasVendidas.size();
+    }
+
+    public static int asientosLibres() {
+
+        return AFORO_TOTAL-listaEntradasVendidas.size();
     }
 
 
-    //Gestiono las zonas
-    public static int zonaEstadio() {
-        int opcion = 0;
-            System.out.println("1-Fondo Norte");
-            System.out.println("2-Fondo Sur");
-            System.out.println("3-Tribuna");
-            System.out.println("4-Lateral");
-            System.out.println("0-Zona seleccionada");
-
-            opcion = Lib.lector.nextInt();
-            //para despues de guardar un valor numerico un nextLine();
-            Lib.lector.nextLine();
-            switch (opcion) {
-                case 1: System.out.println("A seleccionado el Fondo Norte");
-                        System.out.println("--------------------------");
-
-                    break;
-                case 2: System.out.println("A seleccionado el Fondo Sur");
-                        System.out.println("--------------------------");
-
-                    break;
-                case 3: System.out.println("A seleccionado la Tribuna");
-                        System.out.println("--------------------------");
-
-                    break;
-                case 4: System.out.println("A seleccionado el Lateral");
-                        System.out.println("--------------------------");
-
-                    break;
-                case 0: System.out.println("Seleccion correcta");
-                        System.out.println("--------------------------");
-
-                    break;
-                default:
-                    System.out.println("Introduce una opcion valida");
-                    //System.out.println("--------------------------");
-
+    public static double recaudacionPartido(Partido partido) {
+        double recaudacion=0;
+        for (Entrada e:listaEntradasVendidas) {
+            if (e.getPartido().getFecha().equals(partido.getFecha())){
+                recaudacion=recaudacion+e.getPrecioEntrada();
             }
-    return opcion;
+        }
+        return recaudacion;
     }
 }
 
