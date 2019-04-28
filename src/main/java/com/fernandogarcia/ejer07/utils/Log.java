@@ -19,5 +19,4 @@ public class Log {
         System.out.println(ANSI_GREEN+msg+ANSI_RESET);
 
     }
-
 }

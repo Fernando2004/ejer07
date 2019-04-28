@@ -1,13 +1,16 @@
 package com.fernandogarcia.ejer07.ejer07;
 
-
 import java.util.InputMismatchException;
-
 import static com.fernandogarcia.ejer07.utils.Lib.isFechaCorrecta;
 import static com.fernandogarcia.ejer07.utils.Lib.lector;
 
 public class Partido {
 
+    public static final int NUM_ZONAS_VIP = 4;
+    public static final int NUM_ZONAS_NORMAL = 20;
+
+    public static Zona[] arrayZonasVip = new Zona[NUM_ZONAS_VIP];
+    public static Zona[] arrayZonasNormal = new Zona[NUM_ZONAS_NORMAL];
 
     private String fecha;
     private Afluencia afluencia;
@@ -70,6 +73,22 @@ public class Partido {
         this.nombreEquipoVisitante = lector.nextLine();
     }
 
+    public static Zona[] getArrayZonasVip() {
+        return arrayZonasVip;
+    }
+
+    public static void setArrayZonasVip(Zona[] arrayZonasVip) {
+        arrayZonasVip = arrayZonasVip;
+    }
+
+    public static Zona[] getArrayZonasNormal() {
+        return arrayZonasNormal;
+    }
+
+    public static void setArrayZonasNormal(Zona[] arrayZonasNormal) {
+        arrayZonasNormal = arrayZonasNormal;
+    }
+
     public String getFecha() {
         return fecha;
     }
@@ -101,7 +120,7 @@ public class Partido {
     public void setNombreEquipoVisitante(String nombreEquipoVisitante) {
         this.nombreEquipoVisitante = nombreEquipoVisitante;
     }
-
+    /**Muestro la informacion de la entrada*/
     @Override
     public String toString() {
         return "\n----Partido por disputar----" +
@@ -111,14 +130,20 @@ public class Partido {
                 "\nnombreEquipoVisitante= " + nombreEquipoVisitante;
 
     }
+    /**Muestro la entrada que se llevara el cliente*/
     public String toStringEntrada() {
         return
                 "\nfecha= " + fecha +
                 "\nnombreEquipoLocal= " + nombreEquipoLocal +
                 "\nnombreEquipoVisitante= " + nombreEquipoVisitante;
     }
-
-
-
-
+    /**añadimos una zona a las entradas vip y normal*/
+    public static void anyadirZonasArray() {
+        for (int i = 0; i < arrayZonasVip.length; i++) {
+            arrayZonasVip[i] = new Zona(Zona.PRECIO_VIP);
+        }
+        for (int i = 0; i < arrayZonasNormal.length; i++) {
+            arrayZonasNormal[i] = new Zona(Zona.PRECIO_NORMAL);
+        }
+    }
 }

@@ -1,6 +1,5 @@
 package com.fernandogarcia.ejer07.utils;
 
-import com.fernandogarcia.ejer07.ejer07.Entrada;
 import com.fernandogarcia.ejer07.misexception.NumerosNegativoException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,17 +10,17 @@ public class Lib {
     public static Scanner lector = new Scanner(System.in);
     public static Random rd = new Random();
 
-
+    /**Limpio la pantalla*/
     public static void limpiarPantalla() {
         System.out.print("\u001B[H\u001B[2J");
         System.out.flush();
     }
-
+    /**Muestro mensaje pulse intro*/
     public static void pausa() {
         System.out.println("Pulsa INTRO para continuar...");
         lector.nextLine();
     }
-
+    /**Genero aleatorios indicando un maximo y un minimo*/
     public static int aleatorio(int min,int max) {
         Random rd = new Random();
         return rd.nextInt(max-min+1)-min;
@@ -37,7 +36,6 @@ public class Lib {
         }
         return opc;
     }
-
     /**controlo las fechas entradas con String*/
     public static boolean isFechaCorrecta(String fechaString){
         boolean fechaCorrecta=true;
@@ -52,12 +50,12 @@ public class Lib {
     }
     //UUID (Unique Universal Identifier)
     //-------------------Metodos-----------------------
+    /**genero una clave alfanumerica para las taquillas*/
     public static String crearClave() {
         String clave = UUID.randomUUID().toString().toUpperCase().substring(0, 6);
         return clave;
     }
-
-    //Este no lo hace bien
+    /**Muestro cualquier lista que le pase */
     public static void  listarArray(Object[] array){
         int cont=0;
         for (int i=0;i<array.length;i++){
@@ -71,8 +69,4 @@ public class Lib {
             System.out.println("No se encontraron elementos");
         }
     }
-
-
-
-
 }

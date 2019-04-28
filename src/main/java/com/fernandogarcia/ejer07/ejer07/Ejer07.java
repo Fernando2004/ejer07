@@ -1,24 +1,23 @@
 package com.fernandogarcia.ejer07.ejer07;
 
 import com.fernandogarcia.ejer07.utils.Lib;
+import com.fernandogarcia.ejer07.utils.Log;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-
 import static com.fernandogarcia.ejer07.utils.Lib.lector;
 
 public class Ejer07 {
 
     public static ArrayList<Partido> listaGeneralPartidos = new ArrayList<>();
 
-
     public static void principal() {
 
-        //Estos los gerneramos para verlos para tener algunos datos
+        //Estos los gernero para verlos para tener algunos datos
         GestionPartidos.generarListaPartidos();
-        //Este lo generamos para que funcione bien y solo una vez
-        GestionEntradas.anyadirZonasArray();
-        //GestionPartidos.listaPartidos();
+        //Este lo genero para que funcione bien y solo una vez
+        Partido.anyadirZonasArray();
+        GestionPartidos.listarPartidos();
 
         //Rellenamos los arrays zonas
         int opcion;
@@ -49,18 +48,18 @@ public class Ejer07 {
                                 break;
                             case 3:
 
-                                System.out.println(GestionEntradas.asientosOcupados());
+                                Log.i("Las localidades ocupadas del partido son: "+GestionEntradas.asientosOcupados());
                                 Lib.pausa();
                                 break;
                             case 4:
 
-                                System.out.println(GestionEntradas.asientosLibres());
+                                Log.d("Las localidades libres del partido son: "+GestionEntradas.asientosLibres());
                                 Lib.pausa();
                                 break;
                             case 5:
-
+                                //Listo algunos partidos
                                 GestionPartidos.listarPartidos();
-
+                                //Selecciono el partido para ver la recaudacion
                                 System.out.println("Indica la fecha del partido el cual ver su recaudación ");
                                 String fechaPartido= Lib.lector.nextLine();
                                 int pos=GestionPartidos.buscarPartidoFecha(fechaPartido);
@@ -80,10 +79,10 @@ public class Ejer07 {
                                 break;
                         }
                     } while (opcVenta != 0);
-                    //Lib.pausa();
+
                     break;
                 case 3:
-
+                    //Genero el sorteo del partido para entradas normales
                     System.out.println("El numero ganador en este partido es: "+GestionPartidos.sorteo());
                     Lib.pausa();
                     break;
@@ -92,7 +91,6 @@ public class Ejer07 {
                     break;
             }
         } while (opcion != 0);
-
     }
     //--------------------Menus------------------------
     public static int menuPrincipal() {
@@ -144,8 +142,6 @@ public class Ejer07 {
         } while (opcion < 0 || opcion > 5);
         return opcion;
     }
-
-
 }
 
 

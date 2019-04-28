@@ -43,48 +43,28 @@ public abstract class Entrada {
         return partido;
     }
 
-    public void setPartido(Partido partido) {
-        this.partido = partido;
-    }
-
     public Zona getZona() {
         return zona;
-    }
-
-    public void setZona(Zona zona) {
-        this.zona = zona;
     }
 
     public int getnFila() {
         return nFila;
     }
 
-    public void setnFila(int nFila) {
-        this.nFila = nFila;
-    }
-
     public int getnAsiento() {
         return nAsiento;
-    }
-
-    public void setnAsiento(int nAsiento) {
-        this.nAsiento = nAsiento;
     }
 
     public double getPrecioEntrada() {
         return precioEntrada;
     }
 
-    public void setPrecioEntrada(double precioEntrada) {
-        this.precioEntrada = precioEntrada;
-    }
-
     @Override
     public String toString() {
         return
-                "\nid= " + id +
-                "\npartido= " + partido.toStringEntrada() +
-                "\nzona= " + zona.toStringEntrada()+
+                "\nid: " + id +
+                "\n--------partido---------" + partido.toStringEntrada() +
+                "\n----------zona----------" + zona.toStringEntrada()+
                 "\nFila= " + nFila +
                 "\nAsiento= " + nAsiento+
                 "\nPrecio entrada= " + precioEntrada;

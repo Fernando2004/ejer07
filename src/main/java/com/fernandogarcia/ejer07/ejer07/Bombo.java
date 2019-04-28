@@ -1,13 +1,12 @@
 package com.fernandogarcia.ejer07.ejer07;
 
 import com.fernandogarcia.ejer07.utils.Lib;
-
 import java.util.ArrayList;
 
 public class Bombo {
 
-    /**con la listaNumeros cogemos los numeros y los entregamos con la entrada
-     * y con listaSorteo cogemos solo la combinacion ganadora*/
+    /**con la listaNumeros cogo los numeros y los entrego con la entrada
+     * y con otro bombo utilizo la misma lista para la combinacion ganadora*/
     private ArrayList<Integer> listaNumeros=new ArrayList<Integer>();
 
 
@@ -31,6 +30,4 @@ public class Bombo {
     public void setListaNumeros(ArrayList<Integer> listaNumeros) {
         this.listaNumeros = listaNumeros;
     }
-
-
 }

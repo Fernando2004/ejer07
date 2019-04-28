@@ -1,17 +1,11 @@
 package com.fernandogarcia.ejer07.ejer07;
 
 import com.fernandogarcia.ejer07.utils.Lib;
-
 import java.util.ArrayList;
 
 public class GestionEntradas {
 
-    public static final int NUM_ZONAS_VIP = 4;
-    public static final int NUM_ZONAS_NORMAL = 20;
     public static final int AFORO_TOTAL=7200;
-
-    public static Zona[] arrayZonasVip = new Zona[NUM_ZONAS_VIP];
-    public static Zona[] arrayZonasNormal = new Zona[NUM_ZONAS_NORMAL];
 
     //Creo una lista de entradas vendidas para agilizar las consultas
     public static ArrayList<Entrada>listaEntradasVendidas=new ArrayList<Entrada>();
@@ -23,31 +17,6 @@ public class GestionEntradas {
     public GestionEntradas() {
     }
 
-    public static Zona[] getArrayZonasVip() {
-        return arrayZonasVip;
-    }
-
-    public static void setArrayZonasVip(Zona[] arrayZonasVip) {
-        GestionEntradas.arrayZonasVip = arrayZonasVip;
-    }
-
-    public static Zona[] getArrayZonasNormal() {
-        return arrayZonasNormal;
-    }
-
-    public static void setArrayZonasNormal(Zona[] arrayZonasNormal) {
-        GestionEntradas.arrayZonasNormal = arrayZonasNormal;
-    }
-
-    /**añadimos una zona a las entradas vip y normal*/
-    public static void anyadirZonasArray() {
-        for (int i = 0; i < arrayZonasVip.length; i++) {
-            arrayZonasVip[i] = new Zona(Zona.PRECIO_VIP);
-        }
-        for (int i = 0; i < arrayZonasNormal.length; i++) {
-            arrayZonasNormal[i] = new Zona(Zona.PRECIO_NORMAL);
-        }
-    }
 
 /**Realiza venta entrada vip y normal*/
     public static void ventaEntradas() {
@@ -87,17 +56,17 @@ public class GestionEntradas {
 
                     //---------------------------------------------
                     //Bamos a zonas
-                    Lib.listarArray(arrayZonasVip);
+                    Lib.listarArray(Partido.arrayZonasVip);
                     System.out.println("Indica la zona del estadio");
                     int idZona = Lib.lector.nextInt();
 
                     //Buscamos la idZona y la controlamos en cada array
-                    int posZona = GestionPartidos.buscarPartidoZona(idZona,arrayZonasVip);
+                    int posZona = GestionPartidos.buscarPartidoZona(idZona,Partido.arrayZonasVip);
                     if (posZona == -1) {
                         System.out.println("No tememos zonas con ese numero");
                     } else {
                         //Guardo la posicion donde esta la zona seleccionado
-                        Zona zona = arrayZonasVip[posZona];
+                        Zona zona = Partido.arrayZonasVip[posZona];
                         if (zona.getLibres() == 0) {
                             System.out.println("Elija otra zona esta completa");
                         } else {
@@ -113,17 +82,17 @@ public class GestionEntradas {
                 } else {//entradaNormal
                     //---------------------------------------------
                     //Bamos a zonas
-                    Lib.listarArray(arrayZonasNormal);
+                    Lib.listarArray(Partido.arrayZonasNormal);
                     System.out.println("Indica la zona del estadio");
                     int idZona = Lib.lector.nextInt();
 
                     //Buscamos la idZona y la controlamos
-                    int posZona = GestionPartidos.buscarPartidoZona(idZona,arrayZonasNormal);
+                    int posZona = GestionPartidos.buscarPartidoZona(idZona,Partido.arrayZonasNormal);
                     if (posZona == -1) {
                         System.out.println("No tememos zonas con ese numero");
                     } else {
                         //Guardo la posicion donde esta la zona seleccionado
-                        Zona zona = arrayZonasNormal[posZona];
+                        Zona zona = Partido.arrayZonasNormal[posZona];
                         if (zona.getLibres() == 0) {
                             System.out.println("Elija otra zona esta completa");
                         } else {
@@ -173,9 +142,8 @@ public class GestionEntradas {
         }
 
     }
-
+    /**busco la posicion de la entrada con su id*/
     private static int buscarEntradaId(int idEntrada) {
-        //busquedas con while
         int pos=-1;
         int i=0;
         while (i<listaEntradasVendidas.size()&& pos==-1){
@@ -186,18 +154,18 @@ public class GestionEntradas {
         }
         return pos;
     }
-
+    /**Muestra los asientos ocupados de cada partido*/
     public static int asientosOcupados() {
 
         return listaEntradasVendidas.size();
     }
-
+    /**Muestra los asientos libres de cada partido*/
     public static int asientosLibres() {
 
         return AFORO_TOTAL-listaEntradasVendidas.size();
     }
 
-
+    /**Muestra la recaudacion de cada partido*/
     public static double recaudacionPartido(Partido partido) {
         double recaudacion=0;
         for (Entrada e:listaEntradasVendidas) {
