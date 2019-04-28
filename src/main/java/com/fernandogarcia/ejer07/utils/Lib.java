@@ -38,6 +38,18 @@ public class Lib {
         return opc;
     }
 
+    /**controlo las fechas entradas con String*/
+    public static boolean isFechaCorrecta(String fechaString){
+        boolean fechaCorrecta=true;
+        SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            formater.parse(fechaString);
+        }
+        catch (ParseException e ){
+            fechaCorrecta=false;
+        }
+        return fechaCorrecta;
+    }
     //UUID (Unique Universal Identifier)
     //-------------------Metodos-----------------------
     public static String crearClave() {
@@ -46,7 +58,6 @@ public class Lib {
     }
 
     //Este no lo hace bien
-
     public static void  listarArray(Object[] array){
         int cont=0;
         for (int i=0;i<array.length;i++){
@@ -61,36 +72,6 @@ public class Lib {
         }
     }
 
-    /**Elimino la entrada devuelta pasandole su identificador*/
-    public static void eliminaEntrada(Entrada[]clase,int id) {
-        int pos=-1;
-        for (int i = 0; i < clase.length; i++) {
-            //si la i del array no es nula y es igual al id que te digo
-            if ((clase[i]!=null)&&(clase[i].getId()==id)) {
-                //me lo borras
-                clase[i]=null;
-                System.out.println("Se elimino la entrada correctamente");
-                //
-                pos=i;
-                break;
-            }
-        }
-        if (pos==-1)
-            System.out.println("Entrada no encontrada ");
-    }
-
-    /**controlo las fechas entradas con String*/
-    public static boolean isFechaCorrecta(String fechaString){
-        boolean fechaCorrecta=true;
-        SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            formater.parse(fechaString);
-        }
-       catch (ParseException e ){
-            fechaCorrecta=false;
-       }
-        return fechaCorrecta;
-    }
 
 
 

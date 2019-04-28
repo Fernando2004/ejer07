@@ -42,7 +42,7 @@ public class GestionEntradas {
         }
     }
 
-
+/**Realiza venta entrada vip y normal*/
     public static void ventaEntradas() {
         System.out.println("------Indica la zona del estadio--------");
         int zonaEst=0;
@@ -143,6 +143,26 @@ public class GestionEntradas {
             System.out.println("opcion incorrecta");
         }
 
+    }
+    /**Elimino la entrada devuelta pasandole su identificador*/
+    public static void devolucionEntrada(Object[]array,int id) {
+        int pos=-1;
+
+        for (int i = 0; i < array.length; i++) {
+            //si la i del array no es nula y es igual al id que te digo
+            /*if ((array[i]!=null)&&(array[i].getArrayVip[i]==id)) {
+                //me lo borras
+                array[i]=null;
+                System.out.println("Se elimino la entrada correctamente");
+                //
+                pos=i;
+                break;
+            }*/
+            //Aumento las plazas libres metemos el numero en el bombo
+
+        }
+        if (pos==-1)
+            System.out.println("Entrada no encontrada ");
     }
 
 
