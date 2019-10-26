@@ -17,7 +17,10 @@ public class Ejer07 {
         //vemos los creados
         GestionPartidos.listarPartidos();
 
-        //Rellenamos los arrays zonas
+        //Rellenamos los arrays zonas 
+        
+        
+        //cambios para hacer los commit de hoy
         int opcion;
 
         do {
